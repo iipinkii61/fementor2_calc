@@ -1,0 +1,103 @@
+@import "./resetcss";
+@import "./variable";
+@import "./mixin";
+
+body {
+  background-color: $bg-dark;
+  color: white;
+}
+
+.layout {
+  width: 80%;
+  margin: auto;
+}
+
+.banner {
+  background-color: $topBg-dark;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+/////////// top
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  span {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  p {
+    font-size: smaller;
+    padding-top: 8px;
+    color: $lighttext-dark;
+  }
+}
+
+.darkToggle {
+  display: flex;
+  align-items: center;
+  font-size: smaller;
+}
+
+/////////// content
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.facebook {
+  @include bigCard($border: $facebook, $today: $lime);
+}
+
+.twitter {
+  @include bigCard($border: $twitter, $today: $lime);
+}
+
+.instagram {
+  background-color: $cardBg-dark;
+  color: $lighttext-dark;
+  text-align: center;
+  width: 25%;
+  border-radius: 4px;
+  border-image: $instagram 30;
+  border-top-width: 4px;
+  border-style: solid;
+  .accName {
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .amount {
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+  .follower {
+    padding: 8px 0;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-size: smaller;
+  }
+  .increaseOrDecrease {
+    color: $lime;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.youtube {
+  @include bigCard($border: $youtube, $today: $red);
+}
