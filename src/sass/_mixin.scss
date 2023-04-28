@@ -4,9 +4,14 @@
   background-color: $cardBg-dark;
   color: $lighttext-dark;
   text-align: center;
-  width: 25%;
+  width: 270px;
   border-top: 4px solid $border;
   border-radius: 4px;
+  margin-bottom: 16px;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: #8b97c62e;
+  }
   .accName {
     padding: 24px 0;
     display: flex;
@@ -33,5 +38,40 @@
     justify-content: center;
     align-items: center;
     gap: 6px;
+  }
+}
+
+@mixin card($today) {
+  background-color: $cardBg-dark;
+  color: $lighttext-dark;
+  width: 270px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: #8b97c62e;
+  }
+  .upperCard {
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 28px 0;
+  }
+  .lowerCard {
+    font-weight: 700;
+    font-size: 32px;
+    color: white;
+    padding: 20px 28px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    div {
+      color: $today;
+      font-weight: 400;
+      font-size: small;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   }
 }

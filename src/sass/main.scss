@@ -38,10 +38,34 @@ body {
   }
 }
 
+.top-lower {
+  padding: 30px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
 .darkToggle {
   display: flex;
   align-items: center;
   font-size: smaller;
+  gap: 10px;
+}
+
+.toggle {
+  background-image: $toggle;
+  border-radius: 30px;
+  width: 60px;
+  .innerToggle {
+    color: $bg-dark;
+    // color: white;
+    background-color: $bg-dark;
+    width: 15px;
+    text-align: center;
+    padding: 5px;
+    margin: 4px;
+    border-radius: 50%;
+  }
 }
 
 /////////// content
@@ -49,7 +73,10 @@ body {
 .content {
   display: flex;
   justify-content: space-between;
-  gap: 32px;
+  flex-wrap: wrap;
+  flex: 1 0 content;
+  //   flex-basis: 300px;
+  //   gap: 32px;
 }
 
 .facebook {
@@ -64,11 +91,16 @@ body {
   background-color: $cardBg-dark;
   color: $lighttext-dark;
   text-align: center;
-  width: 25%;
+  width: 270px;
   border-radius: 4px;
   border-image: $instagram 30;
   border-top-width: 4px;
   border-style: solid;
+  margin-bottom: 16px;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: #8b97c62e;
+  }
   .accName {
     padding: 24px 0;
     display: flex;
@@ -100,4 +132,12 @@ body {
 
 .youtube {
   @include bigCard($border: $youtube, $today: $red);
+}
+
+.cardIncrease {
+  @include card($today: $lime);
+}
+
+.cardDecrease {
+  @include card($today: $red);
 }
