@@ -7,6 +7,7 @@ $instagram: linear-gradient(to right, #fdc468, #df4996);
 $youtube: #c4032a;
 
 $toggle: linear-gradient(to right, #378fe6, #3eda82);
+$toggle-light: hsl(230, 22%, 74%);
 
 //dark theme
 $bg-dark: #1e202a;
@@ -15,8 +16,12 @@ $cardBg-dark: #252a41;
 $lighttext-dark: #8b97c6;
 
 //light theme
-$hover-light: #aeb3cb;
+$hover-light: #aeb3cb81;
 $topBg-light: #f5f7ff;
 $cardBg-light: #f0f2fa;
 $lighttext-light: #63687e;
 $text-light: #1e202a;
+
+$small: 390px;
+$medium: 673px;
+$large: 1440px;

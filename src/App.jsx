@@ -54,118 +54,123 @@ function App() {
     </svg>
   );
 
+  const [isWhite, setIsWhite] = useState(false);
+
   return (
-    <div className="layout">
-      <div className="banner"> </div>
-      <div className="top">
-        <div>
-          <span>Social Media Dashboard</span>
-          <p>Total Followers: 23,004</p>
+    <div className={isWhite ? "lightTheme" : ""}>
+      <div className="layout">
+        <div className="banner"> </div>
+        <div className="top">
+          <div>
+            <span>Social Media Dashboard</span>
+            <p>Total Followers: 23,004</p>
+          </div>
+          <div className="darkToggle">
+            Dark mode
+            <Toggle isWhite={isWhite} setIsWhite={setIsWhite} />
+          </div>
         </div>
-        <div className="darkToggle">
-          Dark mode <Toggle />{" "}
+        <div className="content">
+          <BigCard
+            app={`facebook${isWhite ? "-light" : ""}`}
+            icon={fb}
+            account={"@nathanf"}
+            follower={1987}
+            arrow={up}
+            today={12}
+          />
+          <BigCard
+            app={`twitter${isWhite ? "-light" : ""}`}
+            icon={twt}
+            account={"@nathanf"}
+            follower={1044}
+            arrow={up}
+            today={99}
+          />
+          <BigCard
+            app={`instagram${isWhite ? "-light" : ""}`}
+            icon={ig}
+            account={"@realnathanf"}
+            follower={"11k"}
+            arrow={up}
+            today={1099}
+          />
+          <BigCard
+            app={`youtube${isWhite ? "-light" : ""}`}
+            icon={yt}
+            account={"Nathan F."}
+            follower={8239}
+            arrow={down}
+            today={144}
+          />
         </div>
-      </div>
-      <div className="content">
-        <BigCard
-          app={"facebook"}
-          icon={fb}
-          account={"@nathanf"}
-          follower={1987}
-          arrow={up}
-          today={12}
-        />
-        <BigCard
-          app={"twitter"}
-          icon={twt}
-          account={"@nathanf"}
-          follower={1044}
-          arrow={up}
-          today={99}
-        />
-        <BigCard
-          app={"instagram"}
-          icon={ig}
-          account={"@realnathanf"}
-          follower={"11k"}
-          arrow={up}
-          today={1099}
-        />
-        <BigCard
-          app={"youtube"}
-          icon={yt}
-          account={"Nathan F."}
-          follower={8239}
-          arrow={down}
-          today={144}
-        />
-      </div>
-      <div className="top-lower">Overview - Today</div>
-      <div className="content">
-        <Card
-          head={"cardIncrease"}
-          content={"Page Views"}
-          icon={fb}
-          amount={87}
-          arrow={up}
-          percent={3}
-        />
-        <Card
-          head={"cardDecrease"}
-          content={"Likes"}
-          icon={fb}
-          amount={52}
-          arrow={down}
-          percent={2}
-        />
-        <Card
-          head={"cardIncrease"}
-          content={"Likes"}
-          icon={ig}
-          amount={5462}
-          arrow={up}
-          percent={2257}
-        />
-        <Card
-          head={"cardIncrease"}
-          content={"Profile Views"}
-          icon={ig}
-          amount={"52k"}
-          arrow={up}
-          percent={1375}
-        />
-        <Card
-          head={"cardIncrease"}
-          content={"Retweets"}
-          icon={twt}
-          amount={117}
-          arrow={up}
-          percent={303}
-        />
-        <Card
-          head={"cardIncrease"}
-          content={"Likes"}
-          icon={twt}
-          amount={507}
-          arrow={up}
-          percent={553}
-        />
-        <Card
-          head={"cardDecrease"}
-          content={"Likes"}
-          icon={yt}
-          amount={107}
-          arrow={down}
-          percent={19}
-        />
-        <Card
-          head={"cardDecrease"}
-          content={"Total Views"}
-          icon={yt}
-          amount={1407}
-          arrow={down}
-          percent={12}
-        />
+        <div className="top-lower">Overview - Today</div>
+        <div className="content">
+          <Card
+            head={"cardIncrease"}
+            content={"Page Views"}
+            icon={fb}
+            amount={87}
+            arrow={up}
+            percent={3}
+          />
+          <Card
+            head={"cardDecrease"}
+            content={"Likes"}
+            icon={fb}
+            amount={52}
+            arrow={down}
+            percent={2}
+          />
+          <Card
+            head={"cardIncrease"}
+            content={"Likes"}
+            icon={ig}
+            amount={5462}
+            arrow={up}
+            percent={2257}
+          />
+          <Card
+            head={"cardIncrease"}
+            content={"Profile Views"}
+            icon={ig}
+            amount={"52k"}
+            arrow={up}
+            percent={1375}
+          />
+          <Card
+            head={"cardIncrease"}
+            content={"Retweets"}
+            icon={twt}
+            amount={117}
+            arrow={up}
+            percent={303}
+          />
+          <Card
+            head={"cardIncrease"}
+            content={"Likes"}
+            icon={twt}
+            amount={507}
+            arrow={up}
+            percent={553}
+          />
+          <Card
+            head={"cardDecrease"}
+            content={"Likes"}
+            icon={yt}
+            amount={107}
+            arrow={down}
+            percent={19}
+          />
+          <Card
+            head={"cardDecrease"}
+            content={"Total Views"}
+            icon={yt}
+            amount={1407}
+            arrow={down}
+            percent={12}
+          />
+        </div>
       </div>
     </div>
   );

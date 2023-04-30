@@ -1,16 +1,16 @@
 @import "./variable";
 
-@mixin bigCard($border, $today) {
-  background-color: $cardBg-dark;
-  color: $lighttext-dark;
+@mixin bigCard($bg, $color, $amountColor, $border, $today, $hover) {
+  background-color: $bg;
+  color: $color;
   text-align: center;
   width: 270px;
   border-top: 4px solid $border;
   border-radius: 4px;
   margin-bottom: 16px;
-  transition: background-color 0.5s ease;
   &:hover {
-    background-color: #8b97c62e;
+    background-color: $hover;
+    transition: background-color 1s ease;
   }
   .accName {
     padding: 24px 0;
@@ -20,7 +20,7 @@
     gap: 8px;
   }
   .amount {
-    color: white;
+    color: $amountColor;
     font-size: 60px;
     font-weight: 700;
     letter-spacing: -2px;
@@ -73,5 +73,33 @@
       align-items: center;
       gap: 4px;
     }
+  }
+}
+
+@mixin toggle($bgColor, $bgButton) {
+  background-image: $bgColor;
+  border-radius: 30px;
+  width: 53px;
+  .innerToggle {
+    background-color: $bgButton;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 3px;
+    border-radius: 50%;
+    border: none;
+  }
+}
+
+// responsive design //
+@mixin desktop-screen {
+  @media (min-width: $medium) and (max-width: $large) {
+    @content;
+  }
+}
+
+@mixin mobile-screen {
+  @media (max-width: $medium) {
+    @content;
   }
 }

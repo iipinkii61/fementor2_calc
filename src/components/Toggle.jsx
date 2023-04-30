@@ -1,6 +1,9 @@
-export default function Toggle() {
+export default function Toggle({ isWhite, setIsWhite }) {
   return (
-    <div className="toggle">
+    <div
+      className={isWhite ? "toggle-light" : "toggle"}
+      onClick={() => setIsWhite(!isWhite)}
+    >
       <button className="innerToggle"></button>
     </div>
   );

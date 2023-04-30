@@ -7,6 +7,11 @@ body {
   color: white;
 }
 
+.lightTheme {
+  background-color: white;
+  color: $text-light;
+}
+
 .layout {
   width: 80%;
   margin: auto;
@@ -36,6 +41,15 @@ body {
     padding-top: 8px;
     color: $lighttext-dark;
   }
+  @include mobile-screen {
+    flex-flow: column;
+    span {
+      font-size: 24px;
+    }
+    p {
+      font-size: small;
+    }
+  }
 }
 
 .top-lower {
@@ -43,6 +57,9 @@ body {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.5px;
+  @include mobile-screen {
+    font-size: 22px;
+  }
 }
 
 .darkToggle {
@@ -51,23 +68,19 @@ body {
   font-size: smaller;
   color: $lighttext-dark;
   gap: 10px;
+  @include mobile-screen {
+    margin-top: 30px;
+    justify-content: space-between;
+  }
 }
 
 .toggle {
-  background-image: $toggle;
-  border-radius: 30px;
-  width: 53px;
-  .innerToggle {
-    color: $bg-dark;
-    // color: white;
-    background-color: $bg-dark;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    margin: 3px;
-    border-radius: 50%;
-    border: none;
-  }
+  @include toggle($bgColor: $toggle, $bgButton: $bg-dark);
+}
+.toggle-light {
+  @include toggle($bgColor: $toggle-light, $bgButton: white);
+  background-color: $toggle-light;
+  text-align: end;
 }
 
 /////////// content
@@ -76,64 +89,101 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex: 1 0 content;
-  //   flex-basis: 300px;
-  //   gap: 32px;
+  @include mobile-screen {
+    justify-content: center;
+  }
 }
 
 .facebook {
-  @include bigCard($border: $facebook, $today: $lime);
+  @include bigCard(
+    $bg: $cardBg-dark,
+    $color: $lighttext-dark,
+    $amountColor: white,
+    $border: $facebook,
+    $today: $lime,
+    $hover: #8b97c62e
+  );
+}
+.facebook-light {
+  @include bigCard(
+    $bg: $cardBg-light,
+    $color: $lighttext-light,
+    $amountColor: $text-light,
+    $border: $facebook,
+    $today: $lime,
+    $hover: $hover-light
+  );
 }
 
 .twitter {
-  @include bigCard($border: $twitter, $today: $lime);
+  @include bigCard(
+    $bg: $cardBg-dark,
+    $color: $lighttext-dark,
+    $amountColor: white,
+    $border: $twitter,
+    $today: $lime,
+    $hover: #8b97c62e
+  );
+}
+.twitter-light {
+  @include bigCard(
+    $bg: $cardBg-light,
+    $color: $lighttext-light,
+    $amountColor: $text-light,
+    $border: $twitter,
+    $today: $lime,
+    $hover: $hover-light
+  );
 }
 
 .instagram {
-  background-color: $cardBg-dark;
-  color: $lighttext-dark;
-  text-align: center;
-  width: 270px;
-  border-radius: 4px;
+  @include bigCard(
+    $bg: $cardBg-dark,
+    $color: $lighttext-dark,
+    $amountColor: white,
+    $border: $instagram,
+    $today: $lime,
+    $hover: #8b97c62e
+  );
   border-image: $instagram 30;
+  // border-radius: 4px;
   border-top-width: 4px;
   border-style: solid;
-  margin-bottom: 16px;
-  transition: background-color 0.5s ease;
-  &:hover {
-    background-color: #8b97c62e;
-  }
-  .accName {
-    padding: 24px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-  .amount {
-    color: white;
-    font-size: 60px;
-    font-weight: 700;
-    letter-spacing: -2px;
-  }
-  .follower {
-    padding: 8px 0;
-    letter-spacing: 5px;
-    font-weight: 100;
-    font-size: smaller;
-  }
-  .increaseOrDecrease {
-    color: $lime;
-    padding: 25px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-  }
+}
+.instagram-light {
+  @include bigCard(
+    $bg: $cardBg-light,
+    $color: $lighttext-light,
+    $amountColor: $text-light,
+    $border: $instagram,
+    $today: $lime,
+    $hover: $hover-light
+  );
+  border-image: $instagram 30;
+  // border-radius: 4px;
+  border-top-width: 4px;
+  border-style: solid;
 }
 
 .youtube {
-  @include bigCard($border: $youtube, $today: $red);
+  @include bigCard(
+    $bg: $cardBg-dark,
+    $color: $lighttext-dark,
+    $amountColor: white,
+    $border: $youtube,
+    $today: $red,
+    $hover: #8b97c62e
+  );
+}
+.youtube-light {
+  @include bigCard(
+    $bg: $cardBg-light,
+    $color: $lighttext-light,
+    $amountColor: $text-light,
+    $border: $youtube,
+    $today: $red,
+    $hover: $hover-light
+  );
 }
 
 .cardIncrease {
