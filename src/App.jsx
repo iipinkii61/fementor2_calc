@@ -107,7 +107,7 @@ function App() {
         <div className="top-lower">Overview - Today</div>
         <div className="content">
           <Card
-            head={"cardIncrease"}
+            head={`cardIncrease${isWhite ? "-light" : ""}`}
             content={"Page Views"}
             icon={fb}
             amount={87}
@@ -115,7 +115,7 @@ function App() {
             percent={3}
           />
           <Card
-            head={"cardDecrease"}
+            head={`cardDecrease${isWhite ? "-light" : ""}`}
             content={"Likes"}
             icon={fb}
             amount={52}
@@ -123,7 +123,7 @@ function App() {
             percent={2}
           />
           <Card
-            head={"cardIncrease"}
+            head={`cardIncrease${isWhite ? "-light" : ""}`}
             content={"Likes"}
             icon={ig}
             amount={5462}
@@ -131,7 +131,7 @@ function App() {
             percent={2257}
           />
           <Card
-            head={"cardIncrease"}
+            head={`cardIncrease${isWhite ? "-light" : ""}`}
             content={"Profile Views"}
             icon={ig}
             amount={"52k"}
@@ -139,7 +139,7 @@ function App() {
             percent={1375}
           />
           <Card
-            head={"cardIncrease"}
+            head={`cardIncrease${isWhite ? "-light" : ""}`}
             content={"Retweets"}
             icon={twt}
             amount={117}
@@ -147,7 +147,7 @@ function App() {
             percent={303}
           />
           <Card
-            head={"cardIncrease"}
+            head={`cardIncrease${isWhite ? "-light" : ""}`}
             content={"Likes"}
             icon={twt}
             amount={507}
@@ -155,7 +155,7 @@ function App() {
             percent={553}
           />
           <Card
-            head={"cardDecrease"}
+            head={`cardDecrease${isWhite ? "-light" : ""}`}
             content={"Likes"}
             icon={yt}
             amount={107}
@@ -163,7 +163,7 @@ function App() {
             percent={19}
           />
           <Card
-            head={"cardDecrease"}
+            head={`cardDecrease${isWhite ? "-light" : ""}`}
             content={"Total Views"}
             icon={yt}
             amount={1407}

@@ -187,9 +187,40 @@ body {
 }
 
 .cardIncrease {
-  @include card($today: $lime);
+  @include card(
+    $small: $lighttext-dark,
+    $large: white,
+    $bg: $cardBg-dark,
+    $today: $lime,
+    $hover: #8b97c62e
+  );
+}
+
+.cardIncrease-light {
+  @include card(
+    $small: $lighttext-light,
+    $large: $text-light,
+    $bg: $cardBg-light,
+    $today: $lime,
+    $hover: $hover-light
+  );
 }
 
 .cardDecrease {
-  @include card($today: $red);
+  @include card(
+    $small: $lighttext-dark,
+    $large: white,
+    $bg: $cardBg-dark,
+    $today: $red,
+    $hover: #8b97c62e
+  );
+}
+.cardDecrease-light {
+  @include card(
+    $small: $lighttext-light,
+    $large: $text-light,
+    $bg: $cardBg-light,
+    $today: $red,
+    $hover: $hover-light
+  );
 }
